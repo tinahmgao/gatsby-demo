@@ -21,5 +21,6 @@ module.exports = {
     title: "Tina's Gatsby",
     description: "web dev portfolio",
     copyright: "💜",
+    contact: "tina@tinagatsby.com",
   },
 }

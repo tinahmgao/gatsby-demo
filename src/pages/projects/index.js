@@ -5,6 +5,10 @@ import { portfolio, projects } from "../../styles/page/_projects.module.scss"
 
 export default function Projects({ data }) {
   const allProjects = data.allMarkdownRemark.nodes
+  console.log(
+    "🌈 ~ file: index.js ~ line 8 ~ Projects ~ allProjects",
+    allProjects
+  )
 
   return (
     <Layout>
@@ -29,8 +33,8 @@ export default function Projects({ data }) {
 // export page query
 
 export const query = graphql`
-  query ProjectsPage {
-    allMarkdownRemark {
+  query ProjectsPages {
+    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
         frontmatter {
           title
