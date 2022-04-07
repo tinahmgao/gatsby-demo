@@ -8,9 +8,15 @@ module.exports = {
   /* Your site config here */
   plugins: [
     `gatsby-plugin-sass`,
+
+    // lazy loading plugins
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+
+    // fetching markdown content
     `gatsby-transformer-remark`,
+
+    // add projects markdowns to graphql layer
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -18,6 +24,8 @@ module.exports = {
         path: `${__dirname}/src/projects`,
       },
     },
+
+    // add images to graphql layer
     {
       resolve: `gatsby-source-filesystem`,
       options: {

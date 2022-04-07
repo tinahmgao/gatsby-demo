@@ -16,7 +16,7 @@ export default function Home({ data }) {
             My portfolio Projects
           </Link>
         </div>
-        <Img fluid={data.file.childrenImageSharp[0].fluid} />
+        <Img fluid={data.file.banner.fluid} />
       </section>
     </Layout>
   )
@@ -25,7 +25,7 @@ export default function Home({ data }) {
 export const query = graphql`
   query Banner {
     file(relativePath: { eq: "banner.jpeg" }) {
-      childrenImageSharp {
+      banner: childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
         }
