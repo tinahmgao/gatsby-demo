@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 export default function Navbar() {
   return (
     <nav>
-      <h1>Web Warrior</h1>
+      <h1>Tina's Gatsby</h1>
       <div className="links">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
