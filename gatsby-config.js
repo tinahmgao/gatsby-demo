@@ -7,4 +7,9 @@
 module.exports = {
   /* Your site config here */
   plugins: [`gatsby-plugin-sass`],
+  siteMetadata: {
+    title: "Tina's Gatsby",
+    description: "web dev portfolio",
+    copyright: "💜",
+  },
 }
