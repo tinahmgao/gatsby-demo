@@ -4,11 +4,8 @@ import Layout from "../../components/Layout"
 import { portfolio, projects } from "../../styles/page/_projects.module.scss"
 
 export default function Projects({ data }) {
-  const allProjects = data.allMarkdownRemark.nodes
-  console.log(
-    "🌈 ~ file: index.js ~ line 8 ~ Projects ~ allProjects",
-    allProjects
-  )
+  const allProjects = data.projects.nodes
+  const contact = data.contact.siteMetadata.contact
 
   return (
     <Layout>
@@ -25,6 +22,7 @@ export default function Projects({ data }) {
             </Link>
           ))}
         </div>
+        <p>Like what you see? Email me at {contact} for a quote</p>
       </div>
     </Layout>
   )
@@ -34,7 +32,9 @@ export default function Projects({ data }) {
 
 export const query = graphql`
   query ProjectsPages {
-    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+    projects: allMarkdownRemark(
+      sort: { fields: frontmatter___date, order: DESC }
+    ) {
       nodes {
         frontmatter {
           title
@@ -42,6 +42,11 @@ export const query = graphql`
           slug
         }
         id
+      }
+    }
+    contact: site {
+      siteMetadata {
+        contact
       }
     }
   }
